@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <h2>Agro<span>Sustentável</span></h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Tecnologia</a>
+            <a href="#calculadora">Simulador</a>
+            <button id="btn-abrir-guia" class="nav-highlight-btn">Guia Completo ↗</button>
+        </nav>
+        <div class="accessibility-control">
+            <button id="toggle-dark-mode" aria-label="Alternar modo escuro">🌓 Modo Escuro</button>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>O Futuro da Agricultura é Biológico</h1>
+            <p>Descubra como os bioinsumos estão transformando o manejo do solo, aumentando a produtividade com respeito à saúde e ao meio ambiente.</p>
+            <button id="hero-btn-guia" class="btn-primary">Explorar Guia Detalhado</button>
+        </div>
+    </section>
+
+    <section id="sobre" class="info-section">
+        <div class="section-title">
+            <h2>Bioinsumos: A Força da Natureza no Campo</h2>
+            <p>Utilize a barra abaixo para buscar por termos como "solo", "plantas", "nutrientes" ou "resistência".</p>
+            
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Digite para pesquisar nos cards...">
+                <span id="search-counter" class="search-count-badge">2 cards encontrados</span>
+            </div>
+        </div>
+
+        <div class="cards-container">
+            <div class="info-card" data-searchable="biofertilizantes solo plantas nutrientes ecossistema">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&q=80&w=600" alt="Planta brotando em solo rico">
+                <h3>Biofertilizantes</h3>
+                <p>Nutrem o solo e as plantas através de microrganismos vivos. Eles liberam nutrientes progressivamente e recuperam a biodiversidade do ecossistema subterrâneo.</p>
+                <button class="btn-card-details" data-target="info-biofert">Ver Benefícios</button>
+            </div>
+
+            <div class="info-card" data-searchable="biopesticidas bioestimulantes defesa resistencia pragas saude">
+                <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&q=80&w=600" alt="Folhas verdes saudáveis com gotas de água">
+                <h3>Biopesticidas e Estimulantes</h3>
+                <p>Agentes biológicos que defendem as lavouras contra pragas e ativam processos metabólicos, aumentando a resistência natural das plantas sem agredir a saúde humana.</p>
+                <button class="btn-card-details" data-target="info-bioestim">Ver Benefícios</button>
+            </div>
+        </div>
+
+        <div id="info-biofert" class="interactive-detail hidden">
+            <h4>💡 Vantagens dos Biofertilizantes:</h4>
+            <ul>
+                <li>Redução drástica da dependência de adubos químicos sintéticos.</li>
+                <li>Melhoria da estrutura física e retenção de água no solo.</li>
+                <li>Estímulo à microbiota benéfica nativa da terra.</li>
+            </ul>
+        </div>
+
+        <div id="info-bioestim" class="interactive-detail hidden">
+            <h4>⚡ Vantagens dos Biopesticidas e Estimulantes:</h4>
+            <ul>
+                <li>Controle biológico focado no alvo, preservando insetos polinizadores como abelhas.</li>
+                <li>Tolerância estendida a estresses climáticos (calor e seca).</li>
+                <li>Alimentos mais limpos e seguros para o consumidor final.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="calculadora" class="calc-section">
+        <div class="calc-container">
+            <h2>Simulador de Sustentabilidade</h2>
+            <p>Insira o tamanho da sua área produtiva para estimar a redução de impacto ambiental ao migrar para bioinsumos.</p>
+            
+            <form id="sustainable-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="hectares">Tamanho da área (em Hectares):</label>
+                    <input type="number" id="hectares" min="1" placeholder="Ex: 50" required>
+                </div>
+                <button type="button" id="btn-calcular">Calcular Impacto Positivo</button>
+            </form>
+
+            <div id="resultado-calculo" class="result-box hidden">
+                <h3>Resultado Estimado para sua Propriedade:</h3>
+                <p>降低 <strong>Redução de Químicos:</strong> <span id="res-quimicos">0</span> kg de defensivos sintéticos evitados por ano.</p>
+                <p>🌱 <strong>Carbono Retido:</strong> <span id="res-carbono">0</span> toneladas de CO₂ equivalente fixadas no solo.</p>
+                <p class="eco-badge">Parabéns! Sua propriedade está no caminho do Futuro Sustentável.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Agro Forte, Futuro Sustentável. Desenvolvido para o Projeto Agrinho.</p>
+        <p>Imagens livres fornecidas por Unsplash.</p>
+    </footer>
+
+
+    <template id="template-segunda-guia">
+        <main class="article-container">
+            <section class="article-intro">
+                <h1>Como Funcionam os Biofertilizantes e Biopesticidas?</h1>
+                <p class="lead">A ciência por trás da agricultura regenerativa e a segurança dos alimentos que chegam à mesa.</p>
+            </section>
+
+            <section class="article-block">
+                <h2>🔬 Mecanismo de Ação</h2>
+                <div class="article-grid">
+                    <div class="grid-text">
+                        <h3>Biofertilizantes</h3>
+                        <p>Ao contrário dos fertilizantes químicos comuns, os biofertilizantes contêm **microrganismos vivos (bactérias e fungos benéficos)**. Eles atuam fixando o nitrogênio do ar diretamente nas raízes e liberando o fósforo preso na terra, alimentando a planta de forma gradual e natural.</p>
+                    </div>
+                    <div class="grid-text">
+                        <h3>Biopesticidas</h3>
+                        <p>São defensivos extraídos da própria natureza, como extratos de plantas ou fungos específicos que combatem pragas. Eles funcionam de maneira direcionada, eliminando apenas os insetos que atacam a plantação, sem prejudicar animais benéficos como as abelhas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="health-focus-box">
+                <h2>🛡️ Por que eles NÃO causam danos à saúde?</h2>
+                <p>A transição para bioinsumos protege os produtores rurais, o meio ambiente e os consumidores finais devido a fatores biológicos fundamentais:</p>
+                
+                <div class="health-cards">
+                    <div class="h-card">
+                        <h4>Zero Resíduos Químicos</h4>
+                        <p>Como são feitos de compostos orgânicos e biológicos, eles se depreciarem naturalmente na natureza. Os alimentos colhidos chegam à mesa sem carregar moléculas sintéticas tóxicas.</p>
+                    </div>
+                    <div class="h-card">
+                        <h4>Ação Altamente Seletiva</h4>
+                        <p>Os biopesticidas atuam em alvos específicos das pragas (como o sistema digestivo de uma lagarta). Como o corpo humano possui uma biologia completamente diferente, essas substâncias são totalmente inofensivas para nós.</p>
+                    </div>
+                    <div class="h-card">
+                        <h4>Proteção ao Produtor Rural</h4>
+                        <p>Quem trabalha no campo ganha qualidade de vida, pois lida com produtos seguros, eliminando o risco de intoxicações e problemas respiratórios causados por defensivos químicos pesados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="action-footer">
+                <p>Quer simular o impacto ambiental da sua lavoura?</p>
+                <button onclick="window.close();" class="btn-primary">Fechar Artigo</button>
+            </div>
+        </main>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
